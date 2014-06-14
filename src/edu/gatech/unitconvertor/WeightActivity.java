@@ -18,18 +18,22 @@ public class WeightActivity extends Activity {
 	
 	private String PoundsToKilograms(double weight)
 	{
-	    return String.valueOf(weight * 0.4536);
+	    return String.valueOf(Math.round(weight * 0.454*1000.0)/1000.0);
 	}
 	
 	private String KilogramsToPounds(double weight)
 	{
-	    return String.valueOf(weight * 2.205);
+	    return String.valueOf(Math.round(weight * 2.205*1000.0)/1000.0);
 	}
 	
 	public void handleClick(View view)
 	{
 		boolean checked = ((RadioButton)view).isChecked();
 		EditText txt = (EditText)findViewById(R.id.editTextWeight);
+		if (txt.getText().toString().matches("")) {
+		    Toast.makeText(this, "You did not enter a weight", Toast.LENGTH_SHORT).show();
+		    return;
+		}
 		double weight = Double.parseDouble(txt.getText().toString());
 		switch(view.getId())
 		{

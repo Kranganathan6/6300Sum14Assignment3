@@ -18,18 +18,22 @@ public class DistanceActivity extends Activity {
 	
 	private String MileToKm(double distance)
 	{
-	    return String.valueOf(distance * 1.60934);
+	    return String.valueOf(Math.round(distance * 1.60934 *1000.0)/1000.0);
 	}
 	
 	private String KmToMile(double distance)
 	{
-	    return String.valueOf(distance * 0.6214);
+	    return String.valueOf(Math.round(distance * 0.6214*1000.0)/1000.0);
 	}
 	
 	public void handleClick(View view)
 	{
 		boolean checked = ((RadioButton)view).isChecked();
 		EditText txt = (EditText)findViewById(R.id.editTextDistance);
+		if (txt.getText().toString().matches("")) {
+		    Toast.makeText(this, "You did not enter a distance", Toast.LENGTH_SHORT).show();
+		    return;
+		}
 		double distance = Double.parseDouble(txt.getText().toString());
 		switch(view.getId())
 		{
