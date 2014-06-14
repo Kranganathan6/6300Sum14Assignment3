@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+    
+    
+   <TextView  android:layout_marginLeft="14dp"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignLeft="@+id/radioGroup1"
+       android:layout_alignParentTop="true"
+       android:text="Temperature" />
+   
+     <EditText
+        android:id="@+id/editTextTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+   <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp" >
+
+        <RadioButton
+            android:id="@+id/celsius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Celsius"
+            android:onClick="handleClick" />
+
+        <RadioButton
+            android:id="@+id/farenheit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Farenheit" 
+            android:onClick="handleClick"/>
+
+
+    </RadioGroup>
+
+
+</RelativeLayout>
