@@ -31,6 +31,7 @@ public class DistanceActivity extends Activity {
 	{
 		boolean checked = ((RadioButton)view).isChecked();
 		EditText txt = (EditText)findViewById(R.id.editTextDistance);
+		// Check if the distance text field is not empty
 		if (txt.getText().toString().matches("")) {
 		    Toast.makeText(this, "You did not enter a distance", Toast.LENGTH_SHORT).show();
 		    return;

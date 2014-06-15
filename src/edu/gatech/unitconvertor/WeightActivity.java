@@ -31,6 +31,8 @@ public class WeightActivity extends Activity {
 	{
 		boolean checked = ((RadioButton)view).isChecked();
 		EditText txt = (EditText)findViewById(R.id.editTextWeight);
+		
+		// Check if the weight text field is not empty
 		if (txt.getText().toString().matches("")) {
 		    Toast.makeText(this, "You did not enter a weight", Toast.LENGTH_SHORT).show();
 		    return;

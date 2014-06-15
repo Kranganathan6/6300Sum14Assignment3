@@ -33,6 +33,8 @@ public class TemperatureActivity extends Activity {
 	{
 		boolean checked = ((RadioButton)view).isChecked();
 		EditText txt = (EditText)findViewById(R.id.editTextTemperature);
+		
+		// Check if the temperature text field is not empty
 		if (txt.getText().toString().matches("")) {
 		    Toast.makeText(this, "You did not enter a temperature", Toast.LENGTH_SHORT).show();
 		    return;
