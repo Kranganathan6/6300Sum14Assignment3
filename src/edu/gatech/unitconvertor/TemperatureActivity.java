@@ -13,6 +13,7 @@ public class TemperatureActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setTitle("Temperature Converter");
 		setContentView(R.layout.activity_temperature);
 	}
 	

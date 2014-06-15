@@ -2,53 +2,63 @@ package edu.gatech.unitconvertor;
 
 import edu.gatech.assignment3.R;
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
+import android.widget.AdapterView.OnItemClickListener;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity  {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setTitle("Unit Converter");
+		 try {
+		        setContentView(R.layout.activity_main);
+		 
+					ListView mlistView = (ListView) findViewById(R.id.idListView);
+					mlistView.setAdapter(new ArrayAdapter<String>(this,
+					        android.R.layout.simple_list_item_1, 
+					        new String[] {"Distance Converter", "Temperature Converter",
+							"Weight Converter"}));
+		 
+
+		        mlistView.setOnItemClickListener(new OnItemClickListener() {
+		            public void onItemClick(AdapterView<?> parent, View view,
+		                int position, long id) {
+
+		              Toast.makeText(getApplicationContext(), ((TextView) view).getText(),
+		                  Toast.LENGTH_SHORT).show();
+		              String sText = ((TextView) view).getText().toString();
+		              Intent intent = null;
+		              if(sText.equals("Distance Converter"))
+		              {
+			              intent = new Intent(getBaseContext(),
+									DistanceActivity.class);
+			          }
+		              else if(sText.equals("Temperature Converter"))
+		              {
+		            	  intent = new Intent(getBaseContext(),
+									TemperatureActivity.class);
+		              }
+		              else if(sText.equals("Weight Converter"))
+		              {
+		            	  intent = new Intent(getBaseContext(),
+									WeightActivity.class);
+		              }
+		 
+		              if(intent != null)
+						startActivity(intent);              
+		            }
+		          });
+		        } catch (Exception e) {
+		        	// TODO Auto-generated catch block
+		        	e.printStackTrace();
+		        }
 	}
 	
-	public void handleClick(View view)
-	{
-		boolean checked = ((RadioButton)view).isChecked();
-		switch(view.getId())
-		{
-			case R.id.radioDistanceConverter:
-			{
-				if(checked)
-				{
-					 Intent intent = new Intent(MainActivity.this,DistanceActivity.class);
-			            startActivity(intent);
-				}
-				break;
-			}
-			case R.id.radioTemperatureConverter:
-			{
-				if(checked)
-				{
-					Intent intent = new Intent(MainActivity.this,TemperatureActivity.class);
-		            startActivity(intent);
-				}
-				break;
-			}
-			case R.id.radioWeightConverter:
-			{
-				if(checked)
-				{
-					Intent intent = new Intent(MainActivity.this,WeightActivity.class);
-		            startActivity(intent);
-				}
-				break;
-			}
-		}
-	}
 }

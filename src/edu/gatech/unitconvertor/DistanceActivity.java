@@ -13,6 +13,7 @@ public class DistanceActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setTitle("Distance Converter");
 		setContentView(R.layout.activity_distance);
 	}
 	

@@ -1,49 +1,21 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     tools:context="${packageName}.${activityClass}" >
 
-    <RadioGroup
-        android:id="@+id/radioGroup1"
-        android:layout_width="wrap_content"
+ 
+
+    <ListView
+        android:id="@+id/idListView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="54dp"
-        android:layout_marginTop="49dp" >
-
-        <RadioButton
-            android:id="@+id/radioDistanceConverter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:text="Distance Converter"
-            android:onClick="handleClick" />
-
-        <RadioButton
-            android:id="@+id/radioTemperatureConverter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Temperature Converter"
-            android:onClick="handleClick" />
-
-        <RadioButton
-            android:id="@+id/radioWeightConverter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Weight Converter" 
-            android:onClick="handleClick"/>
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/radioGroup1"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@string/app_name"
-        android:text="Unit Converter Home" />
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="8dp" 
+        android:divider="#b5b5b5"
+      android:dividerHeight="1dp"
+      android:listSelector="@drawable/list_selector">
+    </ListView>
 
 </RelativeLayout>

@@ -13,6 +13,7 @@ public class WeightActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setTitle("Weight Converter");
 		setContentView(R.layout.activity_weight);
 	}
 	
