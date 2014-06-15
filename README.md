@@ -14,7 +14,7 @@ This application has a capability to convert distance between miles and kilomete
 * Launch Eclipse.
 * Import the project using File->Import->Projects from git->Existing local repository->select "d:\6300Sum14Assignment3\.git"->add.
 * Build and Run the project using "Run->Run as->Android Application.
-* The application builds and installs the 6300Sum14Assignment3.apk on the device and runs the application on the device.
+* The application builds and installs the 6300Sum14Assignment3.apk on the device and runs the application on the android virtual device.
 
 ## 3 Usage
 * Launching the application from the device presents the users with a list view of all the unit converters supported by the application. It displays "Distance Converter", "Temperature Converter", "Weight Converter".
