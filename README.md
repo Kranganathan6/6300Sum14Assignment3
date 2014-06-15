@@ -1,11 +1,5 @@
- ***************************************************************************
-*
-* Unit Converter
-*
-* https://github.com/Kranganathan6/6300Sum14Assignment3/
-*
-***************************************************************************
-Unit Converter consists of three activities.
-1. Distance Converter 
-2. Temperature Converter
-3. Weight Converter.
+#Read me – Unit Converter
+## 1 Introduction
+This application has a capability to convert distance between miles and kilometers, weight between pounds and kilogram, temperature between celsius and fahrenheit.
+
+## 2 Usage
